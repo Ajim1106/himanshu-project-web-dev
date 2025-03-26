@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food</title>
+    <link rel="stylesheet" href="style.css">
+
+    
+    <style>
+
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+    
+    .fullscreen img {
+        max-width: 90%;
+        max-height: 90%;
+        border: 5px solid #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    </style>
+</head>
+<body>
+    <img src="fd1.jpg" onclick="openFullscreen(this)">
+    <img src="fd2.jpg" onclick="openFullscreen(this)">
+    <img src="fd3.jpg"onclick="openFullscreen(this)">
+    <img src="fd4.jpg"onclick="openFullscreen(this)">
+    <img src="fd5.jpg" onclick="openFullscreen(this)">
+    <img src="fd6.jpg" onclick="openFullscreen(this)">
+
+    <div class="fullscreen" id="fullscreen">
+        <img id="fullscreen-img" src="ntr1.jpg" alt="" >
+    </div>
+
+    <script>
+        
+        function openFullscreen(img) {
+            const fullscreenDiv = document.getElementById('fullscreen');
+            const fullscreenImg = document.getElementById('fullscreen-img');
+            fullscreenImg.src = img.src; 
+            fullscreenDiv.style.display = 'flex'; 
+        }
+
+        
+        document.getElementById('fullscreen').onclick = function () {
+            this.style.display = 'none'; 
+        };
+    </script>
+
+</body>
+</html>
